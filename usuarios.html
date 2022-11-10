@@ -1,0 +1,313 @@
+<!doctype html>
+    <html lang="PT-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Usuários</title>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.png"/>
+
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/bundle.css" type="text/css">
+        <link rel="stylesheet" href="assets/css/all.min.css">
+        <link rel="stylesheet" href="assets/css/app.min.css" type="text/css">
+        <link rel="stylesheet" href="assets/css/bootstrap-colorpicker.css">
+
+        <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+    </head>
+
+    <!-- begin::navigation -->
+    <div class="navigation">
+        <!-- begin::logo -->
+        <div id="logo">
+            <a href="">
+                <img class="logo" src="assets/images/logo.png" alt="">
+                <img class="logo-sm" src="assets/images/logo-sm.png" alt="">
+                <img class="logo-dark" src="assets/images/logo-dark.png" alt="">
+            </a>
+        </div>
+        <!-- end::logo -->
+        <!-- begin::navigation header -->
+        <header class="navigation-header">
+            <figure class="avatar avatar-state-success avatar-lg">
+                <img src="assets/images/avatar-default.png" class="rounded-circle" alt="">
+            </figure>
+            <div>	  
+                <h5 class="color-white mb-0" id="user-name">Carlos Eduardo</h5>
+                <p class="text-adm mb-2" id="user-email">Administrator</p>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="" class="btn btn-outline-light btn-floating" title="Perfil" data-toggle="tooltip">
+                            <i class="far fa-user"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="btn btn-outline-light btn-floating" title="Configurações" data-toggle="tooltip">
+                            <i data-feather="settings"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="btn btn-outline-light btn-floating" title="Sair" data-toggle="tooltip">
+                            <i data-feather="log-out"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!-- end::navigation header -->
+        <!-- begin::navigation menu -->
+        <div class="navigation-menu-body">
+            <ul>
+
+                <li class="navigation-divider">Meu dashboard</li>
+                <li class="open">
+                    <a class="active" href="./pagina-inicial.html">
+                        <i class="nav-link-icon fal fa-house-user"></i>
+                        <span>Página Inicial</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="meu-plano.html">
+                        <i class="nav-link-icon fal fa-usd-circle"></i>
+                        <span>Meu plano</span>
+                    </a>
+                    <ul>
+                        <li><a class="" href="planos.html">Planos</a></li>
+                        <li><a class="" href="extrato.html">Extrato</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="relatorios.html">
+                        <i class="nav-link-icon fal fa-analytics"></i>
+                        <span>Relatórios</span>
+                        <span class="badge badge-danger">2</span>
+                    </a>
+                </li>
+
+                <li class="navigation-divider">Atendimento</li>
+                <li class="">
+                    <a class="" href="atendimento.html">
+                        <i class="nav-link-icon fal fa-user-clock"></i>
+                        <span id="status-atendimento"></span>
+                    </a>
+                </li>
+
+
+                <li class="navigation-divider">Configurações</li>
+                <li class="">
+                    <a class="" href="configuracoes.html">
+                        <i class="nav-link-icon fal fa-comment-alt-dots"></i>
+                        <span>Mensagens</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- end::navigation menu -->
+    </div>
+    <!-- end::navigation -->
+
+<body class="sticky-navigation shadow-layout sticky-footer semi-dark">
+
+<div id="main">
+    <!-- begin::header -->
+    <div class="header">
+        <!-- begin::header left -->
+        <ul class="navbar-nav">
+            <!-- begin::navigation-toggler -->
+            <li class="nav-item navigation-toggler">
+                <a href="#" class="nav-link">
+                    <i class="fal fa-bars"></i>
+                </a>
+            </li>
+            <!-- end::navigation-toggler -->
+
+            <!-- begin::header-logo -->
+            <li class="nav-item" id="header-logo">
+                <a href="index.html">
+                    <img class="logo" src="assets/images/logo-mobile.png" alt="">
+                    <img class="logo-sm" src="assets/images/logo-sm.png" alt="">
+                    <img class="logo-dark" src="assets/images/logo-dark.png" alt="">
+                </a>
+            </li>
+            <!-- end::header-logo -->
+        </ul>
+        <!-- end::header left -->
+
+        <!-- begin::header-right -->
+        <div class="header-right">
+            <ul class="navbar-nav">
+                <!-- begin::search-form -->
+                <li class="nav-item search-form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="pesquisar" placeholder="Pesquisar">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-default" type="button">
+                                            <i class="far fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+                <!-- end::search-form -->
+
+
+                <li class="nav-item">
+                    <p class="p-t-20 font-weight-700" id="usuario-id" >ID: OPX-6638-AZ</p>
+                </li>
+                <!-- begin::header minimize/maximize -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link" title="Fullscreen" data-toggle="fullscreen">
+                        <i class="maximize fas fa-compress" data-feather="maximize"></i>
+                        <i class="minimize fas fa-expand" data-feather="minimize"></i>
+                    </a>
+                </li>
+                <!-- end::header minimize/maximize -->
+
+                <!-- begin::header -->
+                <li class="nav-item ">
+                    <a href="ajuda.html" class="nav-link nav-link-notify" title="Ajuda" data-toggle="tooltip">
+                        <i class="fal fa-question-circle"></i>
+                    </a>
+                </li>
+                <!-- end::header -->
+
+                <!-- begin::header -->
+                <li class="nav-item ">
+                    <a href="avisos-comunicados.html" class="nav-link nav-link-notify" title="Avisos e comunicados" data-toggle="tooltip">
+                        <i class="fal fa-bell"></i>
+                    </a>
+                </li>
+                <!-- end::header -->
+            </ul>
+
+            <!-- begin::mobile header toggler -->
+            <ul class="navbar-nav d-flex align-items-center">
+                <li class="nav-item header-toggler">
+                    <a href="#" class="nav-link">
+                        <i data-feather="arrow-down"></i>
+                    </a>
+                </li>
+            </ul>
+            <!-- end::mobile header toggler -->
+        </div>
+        <!-- end::header-right -->
+    </div>
+    <!-- end::header -->
+    <!-- begin::main-content -->
+    <div class="main-content">
+
+        <!-- begin::container -->
+        <div class="container-fluid">
+
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="float-sm-left">
+                            <h4>Usuários</h4>
+                        </div>
+                        <div class="float-sm-right">
+                            <a href="usuario-add.html">
+                            <button type="button" class="btn btn-success btn-block" id="add-usuario.html">Adicionar novo usuário</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="element-box-tp">
+                        <div class="table-responsive">
+                            <table class="table table-padded">
+                                <thead>
+                                <tr>
+                                    <th>Usuário</th>
+                                    <th>E-mail</th>
+                                    <th>Logado</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <!-- begin::list -->
+                                <tr>
+                                    <td class="nowrap" data-label="Usuário">
+                                        <span id="users-name">Roberto Borsatti</span>
+                                    </td>
+                                    <td data-label="E-mail">
+                                        <span class="" id="users-email">robertoborsatti@simplechat.com.br</span>
+                                    </td>
+                                    <td data-label="Logado">
+                                        <span id="users-status"class="badge badge-success mr-2 d-sm-inline d-none">Online</span>
+                                    </td>
+                                    <td class="text-right bolder nowrap" data-label="Ações">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item"><a class="list-inline-default" href="./editar.php" data-toggle="tooltip" data-original-title="Editar"><i class="fal fa-edit"></i></a></li>
+                                            <li class="list-inline-item"><a class="list-inline-default" href="./excluir.php" data-toggle="tooltip" data-original-title="Excluir"><i class="fal fa-trash-alt"></i></a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <!-- end::list -->
+                                <!-- begin::list -->
+                                <tr>
+                                    <td class="nowrap" data-label="Usuário">
+                                        <span>Roberto Borsatti</span>
+                                    </td>
+                                    <td data-label="E-mail">
+                                        <span id="users-email" class="">robertoborsatti@simplechat.com.br</span>
+                                    </td>
+                                    <td data-label="Logado">
+                                        <span class="badge badge-danger mr-2 d-sm-inline d-none">Offline</span>
+                                    </td>
+                                    <td class="text-right bolder nowrap" data-label="Ações">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item"><a class="list-inline-default" href="./editar.php" data-toggle="tooltip" data-original-title="Editar"><i class="fal fa-edit"></i></a></li>
+                                            <li class="list-inline-item"><a class="list-inline-default" href="./excluir.php?id='<?php echo $user_id?>'" data-toggle="tooltip" data-original-title="Excluir"><i class="fal fa-trash-alt"></i></a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <!-- end::list -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- end::container -->
+    </div>
+    <!-- end::main-content -->
+
+    <footer>
+        <div class="container-fluid">
+            <div>v1.0.0 </div>
+        </div>
+    </footer>
+</div>
+<script src="assets/js/bundle.js"></script>
+<script src="assets/js/bootstrap-colorpicker.js"></script>
+<script src="assets/js/meteorEmoji.min.js"></script>
+<script src="assets/js/app.min.js"></script>
+
+<script>
+    $(function () {
+        $('#simple-color-picker').colorpicker();
+    });
+</script>
+<script>
+    (() => {
+        new MeteorEmoji()
+    })()
+</script>
+</body>
+</html>

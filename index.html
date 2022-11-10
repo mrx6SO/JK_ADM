@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="spaceloto, lotofacil, robo lotofacil">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/css/styleLanding.css">
+    <script src="js/scriptLanding.js"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lejjm4aAAAAALugI-q-H7GpUpMu2HpfYcC-Atqr"></script>
+    <title>SPACE LOTO!</title>
+</head>
+
+<body>
+    <div id="preloader">
+        <div class="inner">
+            <div class="bolas">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+
+        <section id="banner">
+            <div id="titleBannerButton">
+                <div id="ImgLogo">
+                    <img src="" alt="Android Foto">
+                </div>
+                <button type="button" class="button">Começar</button>
+            </div>
+        </section>
+
+        <!-- MODAL LOGIN -->
+        <div id="modal-login" class="modal-container">
+            <div class="modal">
+                <button class="fechar">x</button>
+                <h3 class="subtitulo">Login</h3>
+                <form action="config/autenticar.php" method="POST" id="login">
+                    <div id="formLoginInput">
+                        <input type="hidden" id="token" name="token">
+                        <label for="email">E-mail
+                            <input type="email" class="input" placeholder="Email" name="email" id="email"
+                                autocomplete="false" required>
+                        </label>
+                        <label for="password">Senha
+                            <input type="password" class="input" placeholder="Senha" name="password" id="password"
+                                autocomplete="false" required>
+                        </label>
+                        <a href="#" class="recuperar" id="requiredPassword">Esqueceu a senha?</a>
+                        <input type="submit" class="submit" value="Entrar" id="btn-login">
+                        <div id="registerDiv"><span>Não tem cadastro? </span><a href="#" class="cadastro"
+                                id="register">Cadastra-se!</a></div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- MODAL CADASTRO -->
+        <div id="modal-cadastrar" class="modal-container">
+            <div class="modal">
+                <button class="fechar">x</button>
+                <h3 class="subtitulo">Inscreva-se</h3>
+                <form method="POST" id="cadastrar" name="cadastrar" action="">
+                    <div id="formLoginInput">
+                        <label for="nome">Nome
+                            <input type="text" class="input" placeholder="Nome" name="nome" id="nome"
+                                autocomplete="true" required>
+                        </label>
+                        <!-- <label for="cpf">Cpf
+                            <input type="text" class="input" placeholder="Cpf" name="cpf" id="cpf"
+                                autocomplete="false" required >
+                        </label>-->
+                        <label for="email">E-mail
+                            <input type="email" class="input" placeholder="Email" name="email" id="email"
+                                autocomplete="true" required>
+                        </label>
+                        <!--   <label for="telefone">Telefone
+                            <input type="telephone" class="input" placeholder="Telefone" name="telefone" id="telefone"
+                                autocomplete="false" required >
+                        </label> -->
+                        <label for="password">Senha
+                            <input type="password" class="input" placeholder="Senha" name="password" id="password"
+                                autocomplete="false" required>
+                        </label>
+                        <!--<label for="codigo">Cód. Acesso
+                            <input type="password" class="input" placeholder="Senha" name="codigo" id="codigo"
+                                autocomplete="false" required >
+                        </label> -->
+
+                        <input type="submit" class="submit" value="Registrar" name="btn-cadastro" id="btn-cadastro">
+                        <div id="mensagem"></div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- MODAL RECUPERAR SENHA -->
+        <div id="modal-recuperar" class="modal-container">
+            <div class="modal">
+                <button class="fechar">x</button>
+                <h3 class="subtitulo">Recuperar senhas</h3>
+                <form method="POST" id="recuperar">
+                    <div id="formLoginInput">
+                        <label for="email">E-mail
+                            <input type="email" class="input" placeholder="Email" name="email-recuperar"
+                                id="email-recuperar" autocomplete="false" required>
+                        </label>
+                        <input type="submit" class="submitRecuperar" value="Recuperar" id="btn-recuperar">
+                        <div id="mensagem2"></div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
+
+<!--AJAX PARA INSERÇÃO DOS DADOS -->
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#btn-cadastro').click(function (event) {
+            event.preventDefault();
+
+            $.ajax({
+                url: "config/cadastrar-usuario.php",
+                method: "post",
+                data: $('#cadastrar').serialize(),
+                dataType: "text",
+                success: function (mensagem) {
+
+                    $('#mensagem').removeClass()
+
+                    if (mensagem == 'Cadastrado com Sucesso!!') {
+
+                        $('#mensagem').addClass('text-success')
+
+                        document.getElementById('email').value = document.getElementById('email').value;
+
+                        document.getElementById('password').value = document.getElementById('password').value;
+
+                        $('#nome').val('')
+                        $('#telefone').val('')
+                        $('#cpf').val('')
+                        $('#email').val('')
+                        $('#senha').val('')
+
+                        //$('#btn-fechar').click();
+                        //location.reload();          
+                        $('#mensagem').text(mensagem)
+                    } else {
+                        $('#mensagem').addClass('text-danger')
+                        $('#mensagem').text(mensagem)
+                    }
+
+                },
+
+            })
+        })
+    })
+</script>
+
+
+<!--AJAX PARA RECUPERAR A SENHA -->
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#btn-recuperar').click(function (event) {
+            event.preventDefault();
+
+            $.ajax({
+                url: "config/recuperar.php",
+                method: "post",
+                data: $('#recuperar').serialize(),
+                dataType: "text",
+                success: function (mensagem) {
+
+                    $('#mensagem2').removeClass()
+
+                    if (mensagem == 'Senha enviada para o seu Email!') {
+
+                        $('#mensagem2').addClass('text-success')
+                        document.getElementById('email').value = document.getElementById('email-recuperar').value;
+                        $('#email-recuperar').val('')
+
+                        //$('#btn-fechar').click();
+                        //location.reload();
+                        $('#mensagem2').text(mensagem)
+
+
+                    } else {
+
+                        $('#mensagem2').addClass('text-danger')
+                        $('#mensagem2').text(mensagem)
+                    }
+                },
+
+            })
+        })
+    })
+</script>
+
+<script>//<![CDATA[
+    $(window).on('load', function () {
+        $('#preloader .inner').fadeOut();
+        $('#preloader').delay(5000).fadeOut('slow');
+        $('body').delay(5000).css({ 'overflow': 'visible' });
+    })
+//]]></script>
+
+<script>
+    //   function onClick(e) {
+    //     e.preventDefault();
+    grecaptcha.ready(function () {
+        grecaptcha.execute('6Lejjm4aAAAAALugI-q-H7GpUpMu2HpfYcC-Atqr', { action: 'submit' }).then(function (token) {
+            document.getElementById("token").value = token;
+        })
+    });
+      //}
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('#telefone').mask('(00) 00000-0000');
+        $('#cpf').mask('000.000.000-00');
+        $('#cep').mask('00000-000');
+
+    });
+</script>

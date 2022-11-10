@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Usuários</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/bundle.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/app.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/bootstrap-colorpicker.css">
+
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+</head>
+
+<!--$("#editar").click(function () { 
+	var data = {"nome":$("#user-nome").val(), "email":$("#user-email").val(), "login":$("#user-password").val() };
+-->
+<!-- begin::navigation -->
+<div class="navigation">
+    <!-- begin::logo -->
+    <div id="logo">
+        <a href="">
+            <img class="logo" src="assets/images/logo.png" alt="">
+            <img class="logo-sm" src="assets/images/logo-sm.png" alt="">
+            <img class="logo-dark" src="assets/images/logo-dark.png" alt="">
+        </a>
+    </div>
+    <!-- end::logo -->
+    <!-- begin::navigation header -->
+    <header class="navigation-header">
+        <figure class="avatar avatar-state-success avatar-lg">
+            <img src="assets/images/avatar-default.png" class="rounded-circle" alt="">
+        </figure>
+        <div>
+            <h5 class="color-white mb-0">Carlos Eduardo</h5>
+            <p class="text-adm mb-2">Administrator</p>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a href="" class="btn btn-outline-light btn-floating" title="Perfil" data-toggle="tooltip">
+                        <i class="far fa-user"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="btn btn-outline-light btn-floating" title="Configurações" data-toggle="tooltip">
+                        <i data-feather="settings"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="btn btn-outline-light btn-floating" title="Sair" data-toggle="tooltip">
+                        <i data-feather="log-out"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!-- end::navigation header -->
+    <!-- begin::navigation menu -->
+    <div class="navigation-menu-body">
+        <ul>
+
+            <li class="navigation-divider">Meu dashboard</li>
+            <li class="open">
+                <a class="active" href="">
+                    <i class="nav-link-icon fal fa-house-user"></i>
+                    <span>Página Inicial</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="">
+                    <i class="nav-link-icon fal fa-usd-circle"></i>
+                    <span>Meu plano</span>
+                </a>
+                <ul>
+                    <li><a class="" href="">Planos</a></li>
+                    <li><a class="" href="">Extrato</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">
+                    <i class="nav-link-icon fal fa-analytics"></i>
+                    <span>Relatórios</span>
+                    <span class="badge badge-danger">2</span>
+                </a>
+            </li>
+
+            <li class="navigation-divider">Atendimento</li>
+            <li class="">
+                <a class="" href="">
+                    <i class="nav-link-icon fal fa-user-clock"></i>
+                    <span>Aguardando</span>
+                </a>
+            </li>
+
+
+            <li class="navigation-divider">Configurações</li>
+            <li class="">
+                <a class="" href="">
+                    <i class="nav-link-icon fal fa-comment-alt-dots"></i>
+                    <span>Mensagens</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <!-- end::navigation menu -->
+</div>
+<!-- end::navigation -->
+
+<body class="sticky-navigation shadow-layout sticky-footer semi-dark">
+
+    <div id="main">
+        <!-- begin::header -->
+        <div class="header">
+            <!-- begin::header left -->
+            <ul class="navbar-nav">
+                <!-- begin::navigation-toggler -->
+                <li class="nav-item navigation-toggler">
+                    <a href="#" class="nav-link">
+                        <i class="fal fa-bars"></i>
+                    </a>
+                </li>
+                <!-- end::navigation-toggler -->
+
+                <!-- begin::header-logo -->
+                <li class="nav-item" id="header-logo">
+                    <a href="index.html">
+                        <img class="logo" src="assets/images/logo-mobile.png" alt="">
+                        <img class="logo-sm" src="assets/images/logo-sm.png" alt="">
+                        <img class="logo-dark" src="assets/images/logo-dark.png" alt="">
+                    </a>
+                </li>
+                <!-- end::header-logo -->
+            </ul>
+            <!-- end::header left -->
+
+            <!-- begin::header-right -->
+            <div class="header-right">
+                <ul class="navbar-nav">
+                    <!-- begin::search-form -->
+                    <li class="nav-item search-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <form>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Pesquisar">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-default" type="button">
+                                                <i class="far fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- end::search-form -->
+
+
+                    <li class="nav-item">
+                        <p class="p-t-20 font-weight-700">ID: OPX-6638-AZ</p>
+                    </li>
+                    <!-- begin::header minimize/maximize -->
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" title="Fullscreen" data-toggle="fullscreen">
+                            <i class="maximize fas fa-compress" data-feather="maximize"></i>
+                            <i class="minimize fas fa-expand" data-feather="minimize"></i>
+                        </a>
+                    </li>
+                    <!-- end::header minimize/maximize -->
+
+                    <!-- begin::header -->
+                    <li class="nav-item ">
+                        <a href="#" class="nav-link nav-link-notify" title="Ajuda" data-toggle="tooltip">
+                            <i class="fal fa-question-circle"></i>
+                        </a>
+                    </li>
+                    <!-- end::header -->
+
+                    <!-- begin::header -->
+                    <li class="nav-item ">
+                        <a href="#" class="nav-link nav-link-notify" title="Avisos e comunicados" data-toggle="tooltip">
+                            <i class="fal fa-bell"></i>
+                        </a>
+                    </li>
+                    <!-- end::header -->
+                </ul>
+
+                <!-- begin::mobile header toggler -->
+                <ul class="navbar-nav d-flex align-items-center">
+                    <li class="nav-item header-toggler">
+                        <a href="#" class="nav-link">
+                            <i data-feather="arrow-down"></i>
+                        </a>
+                    </li>
+                </ul>
+                <!-- end::mobile header toggler -->
+            </div>
+            <!-- end::header-right -->
+        </div>
+        <!-- end::header -->
+        <!-- begin::main-content -->
+        <div class="main-content">
+
+            <!-- begin::container -->
+            <div class="container-fluid">
+
+                <div class="page-header">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="float-sm-left">
+                                <a href="usuario-add.html">
+                                    <h4>Adicionar usuário</h4>
+                                </a>
+                            </div>
+                            <div class="float-sm-right">
+                                <button type="button" class="btn btn-light"><i class="fal fa-undo-alt m-r-10"></i>
+                                    Voltar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 col-lg-8 col-xl-9">
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="card-title">Preencha os campos abaixo</h6>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <form action="" method="POST" id="add-users" name="add-users" />
+                                        <div class="form-row">
+                                            <div class="form-group col-12 col-md-4">
+                                                <label for="user-nome">Nome</label>
+                                                <input type="text" class="form-control" name="user-nome" id="user-nome"
+                                                    placeholder="">
+                                            </div>
+                                            <div class="form-group col-12 col-md-4">
+                                                <label for="">Email <strong>(Opcional)</strong></label>
+                                                <input type="text" class="form-control" id="user-email"
+                                                    name="user-email" placeholder="">
+                                            </div>
+                                            <div class="form-group col-12 col-md-4">
+                                                <label for="">Senha</label>
+                                                <input type="password" class="form-control" id="user-senha"
+                                                    name="user-senha" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-6 col-md-3">
+                                                <label for="">Enviar mensagem?</label>
+                                                <div class="">
+                                                    <!-- Rounded switch -->
+                                                    <label class="switch">
+                                                        <input type="checkbox">
+                                                        <span class="slider round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-6 col-md-3">
+                                                <label for="">Administrador</label>
+                                                <div class="">
+                                                    <!-- Rounded switch -->
+                                                    <label class="switch">
+                                                        <input type="checkbox">
+                                                        <span class="slider round"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="" id="salvar" name="salvar"
+                                            class="btn btn-primary btn-lg">Salvar</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xl-3">
+                        <div class="card border mb-0">
+                            <div class="card-header bg-success text-center">
+                                <i class="fad fa-info-circle font-size-80 m-t-b-20"></i>
+                                <h5 class="font-size-20">Super dica!</h5>
+
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text text-center">
+                                    Para utilizar os atalhos no <strong>ATENDIMENTO MANUAL</strong> você deve digitar
+                                    /atalhocadastrado. <br><br>
+                                    Utilize sempre a / e o nome no qual você cadastrou seu atalho.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- end::container -->
+        </div>
+        <!-- end::main-content -->
+
+
+
+        <footer>
+            <div class="container-fluid">
+                <div>v1.0.0 </div>
+            </div>
+        </footer>
+    </div>
+    <script src="assets/js/bundle.js"></script>
+    <script src="assets/js/bootstrap-colorpicker.js"></script>
+    <script src="assets/js/meteorEmoji.min.js"></script>
+    <script src="assets/js/app.min.js"></script>
+
+    <script>
+        $(function () {
+            $('#simple-color-picker').colorpicker();
+        });
+    </script>
+    <script>
+        (() => {
+            new MeteorEmoji()
+        })()
+    </script>
+    <script>
+        var sw = document.querySelectorAll(".switch");
+        var sw_ = sw[0].querySelector("input").checked;
+
+        if (sw_.checked == true) {
+            //swal("")
+            alert("ok")
+        }
+    </script>
+</body>
+
+</html>
